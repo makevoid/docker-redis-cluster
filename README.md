@@ -1,5 +1,46 @@
 # docker-redis-cluster
 
+
+### this fork
+
+
+1 - check redis cluster tutorial
+https://redis.io/topics/cluster-tutorial
+
+
+2 - run compose
+
+    docker-compose up --build -d
+
+
+3 - test the "deployment" / "infrastructure"
+
+(from the host machine)
+
+    redis-cli -p 7001 -c
+
+    localhost:7001> SET foo bar
+
+    # => OK
+
+
+
+then from another shell
+
+
+    redis-cli -p 7002 -c
+
+    localhost:7002> GET foo
+
+    # => "bar"
+
+
+gg 
+
+---
+
+---
+
 [![Docker Stars](https://img.shields.io/docker/stars/grokzen/redis-cluster.svg)](hub])
 [![Docker Pulls](https://img.shields.io/docker/pulls/grokzen/redis-cluster.svg)](hub])
 [![Image Size](https://img.shields.io/imagelayers/image-size/grokzen/redis-cluster/latest.svg)](https://imagelayers.io/?images=grokzen/redis-cluster:latest)
