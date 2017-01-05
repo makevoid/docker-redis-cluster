@@ -1,7 +1,9 @@
 # This tag use ubuntu 14.04
 FROM phusion/baseimage:0.9.16
+#
+# todo: change to debian latest or alpine
 
-MAINTAINER Johan Andersson <Grokzen@gmail.com>
+MAINTAINER Johan Andersson <Grokzen@gmail.com> - @makevoid's fork
 
 # Some Environment Variables
 ENV HOME /root
@@ -58,6 +60,7 @@ ADD ./docker-data/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD ./docker-data/start.sh /start.sh
 RUN chmod 755 /start.sh
 
+# not needed if spawning less containers or one per instance
 EXPOSE 7000 7001 7002 7003 7004 7005 7006 7007
 
 CMD ["/bin/bash", "/start.sh"]
